@@ -1,7 +1,10 @@
 spring:
   application:
     name: zuul
-    
+    cloud:
+     config:
+      override-none: true
+      
 server:
   port: 3001
   
@@ -16,7 +19,7 @@ zuul:
     user-service: /user-service/**
     order-service: /order-service/**
 
-  retryable: true   #默认是:false zuul是不推荐使用重试
+  retryable: true   
   
 ribbon:
   ConnectTimeout: 1000
